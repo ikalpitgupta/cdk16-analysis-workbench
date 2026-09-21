@@ -87,6 +87,18 @@ def _esc(s) -> str:
     return re.sub(r"&", "&amp;", re.sub(r"<", "&lt;", str(s)))
 
 
+def _fig_src(path: Path) -> str:
+    """Inline figure as base64 data URI so the HTML report is self-contained
+    (works identically locally, in the in-app viewer, and on serverless hosts
+    where relative figure paths would 404)."""
+    try:
+        import base64
+        data = base64.b64encode(path.read_bytes()).decode("ascii")
+        return f"data:image/png;base64,{data}"
+    except OSError:
+        return f"figures/{path.name}"
+
+
 # --------------------------------------------------------------------------- #
 # Figures
 # --------------------------------------------------------------------------- #
@@ -371,7 +383,7 @@ def generate_html(result: dict, protein: dict, report_title: str,
         for r in result.get("provenance", []))
 
     figs_html = "".join(
-        f"<img class='fig' src='figures/{p.name}' alt='{_esc(cap)}'>"
+        f"<img class='fig' src='{_fig_src(p)}' alt='{_esc(cap)}'>"
         f"<div class='figcap'>Figure: {_esc(cap)}</div>"
         for cap, p in figs)
 
