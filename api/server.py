@@ -512,4 +512,8 @@ if DIST.exists():
     def spa(full_path: str) -> FileResponse:
         if full_path.startswith("api/"):
             raise HTTPException(404, "not found")
+        # Serve real files from dist (favicon, images, ...) then SPA-fallback.
+        candidate = (DIST / full_path).resolve()
+        if full_path and candidate.is_file() and str(candidate).startswith(str(DIST.resolve())):
+            return FileResponse(candidate)
         return FileResponse(DIST / "index.html")

@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import json
 import logging
+import os
 import re
 from datetime import datetime, timezone
 from pathlib import Path
@@ -16,8 +17,11 @@ import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
-RESULTS = ROOT / "results"
+# Writable output dir: serverless (Vercel) => /tmp; local => repo results/
+RESULTS = Path(os.environ.get("CDK16_RESULTS_DIR") or (ROOT / "results"))
 REPORTS = RESULTS / "reports"
+# Bundled read-only data (protein metadata for report context).
+BUNDLED = ROOT / "data" / "processed"
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger("report")
@@ -539,7 +543,7 @@ def create_report(result: dict, section: str = "full",
     (rdir / "figures").mkdir(exist_ok=True)
 
     protein = {}
-    pj = ROOT / "data" / "processed" / "cdk16_protein.json"
+    pj = BUNDLED / "cdk16_protein.json"
     if pj.exists():
         protein = json.loads(pj.read_text(encoding="utf-8"))
     protein.setdefault("accession", "Q00536")

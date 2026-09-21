@@ -1,0 +1,16 @@
+# Vercel deploy: ship only what the app needs. The raw cache (161 MB+) is
+# re-fetchable via src/acquisition/fetch_all.py and is never read at runtime.
+data/raw/
+frontend/node_modules/
+frontend/dist/
+results/
+.freebuff/
+.git/
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.db
+*.db-shm
+*.db-wal
+.env*

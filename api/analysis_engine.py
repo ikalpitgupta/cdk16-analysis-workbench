@@ -19,11 +19,19 @@ from pathlib import Path
 
 import pandas as pd
 
+import os
+
 ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "data" / "processed"
+# Read-only bundled datasets (deployed with the code; never written to).
+BUNDLED = ROOT / "data" / "processed"
+# Writable dir: on serverless (Vercel) only /tmp is writable, so the SQLite DB
+# lives there; locally the repo's data/processed is used.
+DATA = Path(os.environ.get("CDK16_DATA_DIR") or (ROOT / "data" / "processed"))
 DB_PATH = DATA / "analysis_sessions.db"
-DATASET = DATA / "cdk16_variants_master.csv"
-DATASET2 = DATA / "cdk16_variants_master.parquet"
+# The variant dataset always comes from the code bundle, never from the
+# writable dir (on Vercel /tmp starts empty on every cold start).
+DATASET = BUNDLED / "cdk16_variants_master.csv"
+DATASET2 = BUNDLED / "cdk16_variants_master.parquet"
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger("analysis")
@@ -272,7 +280,9 @@ class AnalysisEngine:
 
     # ---------------------------------------------------------------- run
     def run(self, sid: str) -> dict:
-        """Queue a run; execution continues in a daemon thread."""
+        """Queue a run. On long-lived servers execution continues in a daemon
+        thread; on serverless (CDK16_SYNC=1, e.g. Vercel) the run executes
+        synchronously because background threads die when the function returns."""
         sess = self.get_session(sid)
         if not sess:
             raise KeyError(sid)
@@ -290,6 +300,11 @@ class AnalysisEngine:
                 "UPDATE analysis_sessions SET status='RUNNING', updated_at=? WHERE id=?",
                 (now, sid))
             self.conn.commit()
+        if os.environ.get("CDK16_SYNC") == "1":
+            self._execute(sid, run_number)
+            done = self.get_session(sid)
+            return {"analysis_id": sid, "run_number": run_number,
+                    "status": done["status"], "message": "analysis completed"}
         t = threading.Thread(target=self._execute, args=(sid, run_number), daemon=True)
         t.start()
         return {"analysis_id": sid, "run_number": run_number,
