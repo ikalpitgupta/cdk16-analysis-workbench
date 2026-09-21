@@ -1,0 +1,288 @@
+
+  [32m[1mVITE[22m v7.3.6[39m  [2mready in [0m[1m505[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
+[2m  [32m➜[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
+[2m11:40:29 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/ReportViewer.tsx[22m
+[2m11:51:16 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/App.tsx[22m
+[2m11:51:30 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/Variants.tsx[22m
+[2m11:52:28 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2m12:02:47 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/Structure.tsx[22m
+[2m12:04:23 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/Structure.tsx[22m
+[2m12:22:26 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/AnalysisLanding.tsx, /src/pages/Literature.tsx, /src/pages/Methodology.tsx, /src/pages/Variants.tsx, /src/pages/AnalysisCharts.tsx, /src/pages/Dashboard.tsx, /src/pages/ReportsCenter.tsx, /src/pages/AnalysisResults.tsx, /src/pages/Structure.tsx, /src/pages/ReportViewer.tsx, /src/pages/AnalysisRun.tsx, /src/pages/AnalysisBuilder.tsx, /src/pages/Protein.tsx[22m
+[2m12:23:54 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Layout.tsx[22m
+[2m12:30:56 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2m12:32:25 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/Dashboard.tsx[22m
+[2m12:36:33 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/App.tsx[22m
+[2m12:36:33 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: C:\Users\Laptop\CDK16_Analysis\frontend\src\App.tsx: Unexpected token (40:8)
+
+[0m [90m 38 |[31m           [33m<[31m[33mRoute[31m path[33m=[31m[32m"/methodology"[31m element[33m=[31m{[33m<[31m[33mMethodology[31m [35m/>} /[31m[33m>[31m
+ [90m 39 |[31m           [33m<[31m[33mRoute[31m path[33m=[31m[32m"/settings"[31m element[33m=[31m{[33m<[31m[33mSettings[31m [33m/[31m[33m>[31m}
+[31m[1m>[22m[31m[90m 40 |[31m         [33m<[31m[33m/[31m[33mRoute[31m[33m>[31m
+ [90m    |[31m         [31m[1m^[22m[31m
+ [90m 41 |[31m       [33m<[31m[33m/[31m[33mRoutes[31m[33m>[31m
+ [90m 42 |[31m     [33m<[31m[33m/[31m[33mThemeProvider[31m[33m>[31m
+ [90m 43 |[31m   )[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mC:/Users/Laptop/CDK16_Analysis/frontend/src/App.tsx[39m:40:8
+[33m  38 |            <Route path="/methodology" element={<Methodology />} />
+  39 |            <Route path="/settings" element={<Settings />}
+  40 |          </Route>
+     |          ^
+  41 |        </Routes>
+  42 |      </ThemeProvider>[39m
+      at constructor (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:369:19)
+      at TypeScriptParserMixin.raise (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:6620:19)
+      at TypeScriptParserMixin.unexpected (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:6640:16)
+      at TypeScriptParserMixin.jsxParseIdentifier (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4585:12)
+      at TypeScriptParserMixin.jsxParseNamespacedName (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4592:23)
+      at TypeScriptParserMixin.jsxParseAttribute (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4668:22)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4683:28)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10064:18)
+      at TypeScriptParserMixin.jsxParseOpeningElementAt (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4678:17)
+      at TypeScriptParserMixin.jsxParseElementAt (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4702:33)
+      at TypeScriptParserMixin.jsxParseElementAt (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElementAt (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElementAt (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10852:21)
+      at C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:9796:39
+      at TypeScriptParserMixin.tryParse (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:9796:18)
+      at C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10821:39
+      at TypeScriptParserMixin.allowInAnd (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:12455:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10821:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:12522:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11701:28)
+      at TypeScriptParserMixin.parseExprAtom (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11357:23)
+      at TypeScriptParserMixin.parseExprAtom (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4780:20)
+      at TypeScriptParserMixin.parseExprSubscripts (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10852:21)
+      at TypeScriptParserMixin.parseMaybeAssign (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:9807:20)
+      at TypeScriptParserMixin.parseExpressionBase (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10805:23)
+      at C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:12796:17)
+[2m12:36:33 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: C:\Users\Laptop\CDK16_Analysis\frontend\src\App.tsx: Unexpected token (40:8)
+
+[0m [90m 38 |[31m           [33m<[31m[33mRoute[31m path[33m=[31m[32m"/methodology"[31m element[33m=[31m{[33m<[31m[33mMethodology[31m [35m/>} /[31m[33m>[31m
+ [90m 39 |[31m           [33m<[31m[33mRoute[31m path[33m=[31m[32m"/settings"[31m element[33m=[31m{[33m<[31m[33mSettings[31m [33m/[31m[33m>[31m}
+[31m[1m>[22m[31m[90m 40 |[31m         [33m<[31m[33m/[31m[33mRoute[31m[33m>[31m
+ [90m    |[31m         [31m[1m^[22m[31m
+ [90m 41 |[31m       [33m<[31m[33m/[31m[33mRoutes[31m[33m>[31m
+ [90m 42 |[31m     [33m<[31m[33m/[31m[33mThemeProvider[31m[33m>[31m
+ [90m 43 |[31m   )[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mC:/Users/Laptop/CDK16_Analysis/frontend/src/App.tsx[39m:40:8
+[33m  38 |            <Route path="/methodology" element={<Methodology />} />
+  39 |            <Route path="/settings" element={<Settings />}
+  40 |          </Route>
+     |          ^
+  41 |        </Routes>
+  42 |      </ThemeProvider>[39m
+      at constructor (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:369:19)
+      at TypeScriptParserMixin.raise (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:6620:19)
+      at TypeScriptParserMixin.unexpected (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:6640:16)
+      at TypeScriptParserMixin.jsxParseIdentifier (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4585:12)
+      at TypeScriptParserMixin.jsxParseNamespacedName (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4592:23)
+      at TypeScriptParserMixin.jsxParseAttribute (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4668:22)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4683:28)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10064:18)
+      at TypeScriptParserMixin.jsxParseOpeningElementAt (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4678:17)
+      at TypeScriptParserMixin.jsxParseElementAt (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4702:33)
+      at TypeScriptParserMixin.jsxParseElementAt (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElementAt (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElementAt (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10852:21)
+      at C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:9796:39
+      at TypeScriptParserMixin.tryParse (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:9796:18)
+      at C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10821:39
+      at TypeScriptParserMixin.allowInAnd (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:12455:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10821:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:12522:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11701:28)
+      at TypeScriptParserMixin.parseExprAtom (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11357:23)
+      at TypeScriptParserMixin.parseExprAtom (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4780:20)
+      at TypeScriptParserMixin.parseExprSubscripts (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10852:21)
+      at TypeScriptParserMixin.parseMaybeAssign (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:9807:20)
+      at TypeScriptParserMixin.parseExpressionBase (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10805:23)
+      at C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:12796:17)
+[2m12:36:33 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: C:\Users\Laptop\CDK16_Analysis\frontend\src\App.tsx: Unexpected token (40:8)
+
+[0m [90m 38 |[31m           [33m<[31m[33mRoute[31m path[33m=[31m[32m"/methodology"[31m element[33m=[31m{[33m<[31m[33mMethodology[31m [35m/>} /[31m[33m>[31m
+ [90m 39 |[31m           [33m<[31m[33mRoute[31m path[33m=[31m[32m"/settings"[31m element[33m=[31m{[33m<[31m[33mSettings[31m [33m/[31m[33m>[31m}
+[31m[1m>[22m[31m[90m 40 |[31m         [33m<[31m[33m/[31m[33mRoute[31m[33m>[31m
+ [90m    |[31m         [31m[1m^[22m[31m
+ [90m 41 |[31m       [33m<[31m[33m/[31m[33mRoutes[31m[33m>[31m
+ [90m 42 |[31m     [33m<[31m[33m/[31m[33mThemeProvider[31m[33m>[31m
+ [90m 43 |[31m   )[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mC:/Users/Laptop/CDK16_Analysis/frontend/src/App.tsx[39m:40:8
+[33m  38 |            <Route path="/methodology" element={<Methodology />} />
+  39 |            <Route path="/settings" element={<Settings />}
+  40 |          </Route>
+     |          ^
+  41 |        </Routes>
+  42 |      </ThemeProvider>[39m
+      at constructor (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:369:19)
+      at TypeScriptParserMixin.raise (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:6620:19)
+      at TypeScriptParserMixin.unexpected (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:6640:16)
+      at TypeScriptParserMixin.jsxParseIdentifier (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4585:12)
+      at TypeScriptParserMixin.jsxParseNamespacedName (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4592:23)
+      at TypeScriptParserMixin.jsxParseAttribute (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4668:22)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4683:28)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10064:18)
+      at TypeScriptParserMixin.jsxParseOpeningElementAt (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4678:17)
+      at TypeScriptParserMixin.jsxParseElementAt (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4702:33)
+      at TypeScriptParserMixin.jsxParseElementAt (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElementAt (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElementAt (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10852:21)
+      at C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:9796:39
+      at TypeScriptParserMixin.tryParse (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:9796:18)
+      at C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10821:39
+      at TypeScriptParserMixin.allowInAnd (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:12455:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10821:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:12522:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11701:28)
+      at TypeScriptParserMixin.parseExprAtom (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11357:23)
+      at TypeScriptParserMixin.parseExprAtom (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4780:20)
+      at TypeScriptParserMixin.parseExprSubscripts (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10852:21)
+      at TypeScriptParserMixin.parseMaybeAssign (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:9807:20)
+      at TypeScriptParserMixin.parseExpressionBase (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10805:23)
+      at C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:12796:17)
+[2m12:36:33 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: C:\Users\Laptop\CDK16_Analysis\frontend\src\App.tsx: Unexpected token (40:8)
+
+[0m [90m 38 |[31m           [33m<[31m[33mRoute[31m path[33m=[31m[32m"/methodology"[31m element[33m=[31m{[33m<[31m[33mMethodology[31m [35m/>} /[31m[33m>[31m
+ [90m 39 |[31m           [33m<[31m[33mRoute[31m path[33m=[31m[32m"/settings"[31m element[33m=[31m{[33m<[31m[33mSettings[31m [33m/[31m[33m>[31m}
+[31m[1m>[22m[31m[90m 40 |[31m         [33m<[31m[33m/[31m[33mRoute[31m[33m>[31m
+ [90m    |[31m         [31m[1m^[22m[31m
+ [90m 41 |[31m       [33m<[31m[33m/[31m[33mRoutes[31m[33m>[31m
+ [90m 42 |[31m     [33m<[31m[33m/[31m[33mThemeProvider[31m[33m>[31m
+ [90m 43 |[31m   )[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mC:/Users/Laptop/CDK16_Analysis/frontend/src/App.tsx[39m:40:8
+[33m  38 |            <Route path="/methodology" element={<Methodology />} />
+  39 |            <Route path="/settings" element={<Settings />}
+  40 |          </Route>
+     |          ^
+  41 |        </Routes>
+  42 |      </ThemeProvider>[39m
+      at constructor (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:369:19)
+      at TypeScriptParserMixin.raise (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:6620:19)
+      at TypeScriptParserMixin.unexpected (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:6640:16)
+      at TypeScriptParserMixin.jsxParseIdentifier (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4585:12)
+      at TypeScriptParserMixin.jsxParseNamespacedName (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4592:23)
+      at TypeScriptParserMixin.jsxParseAttribute (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4668:22)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4683:28)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10064:18)
+      at TypeScriptParserMixin.jsxParseOpeningElementAt (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4678:17)
+      at TypeScriptParserMixin.jsxParseElementAt (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4702:33)
+      at TypeScriptParserMixin.jsxParseElementAt (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElementAt (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElementAt (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10852:21)
+      at C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:9796:39
+      at TypeScriptParserMixin.tryParse (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:9796:18)
+      at C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10821:39
+      at TypeScriptParserMixin.allowInAnd (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:12455:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10821:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:12522:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11701:28)
+      at TypeScriptParserMixin.parseExprAtom (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11357:23)
+      at TypeScriptParserMixin.parseExprAtom (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:4780:20)
+      at TypeScriptParserMixin.parseExprSubscripts (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10852:21)
+      at TypeScriptParserMixin.parseMaybeAssign (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:9807:20)
+      at TypeScriptParserMixin.parseExpressionBase (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10805:23)
+      at C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (C:\Users\Laptop\CDK16_Analysis\frontend\node_modules\@babel\parser\lib\index.js:12796:17)
+[2m12:40:43 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/App.tsx[22m
+[2m12:43:49 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Layout.tsx[22m
+[2m12:57:34 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2m1:08:06 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/Variants.tsx[22m

@@ -1,0 +1,702 @@
+{
+ "accession": "Q00536",
+ "entry_name": "Q00536_CDK16_HUMAN",
+ "name": "Cyclin-dependent kinase 16",
+ "gene": "CDK16",
+ "organism": "Homo sapiens",
+ "length": 496,
+ "sequence": "MDRMKKIKRQLSMTLRGGRGIDKTNGAPEQIGLDESGGGGGSDPGEAPTRAAPGELRSARGPLSSAPEIVHEDLKMGSDGESDQASATSSDEVQSPVRVRMRNHPPRKISTEDINKRLSLPADIRLPEGYLEKLTLNSPIFDKPLSRRLRRVSLSEIGFGKLETYIKLDKLGEGTYATVYKGKSKLTDNLVALKEIRLEHEEGAPCTAIREVSLLKDLKHANIVTLHDIIHTEKSLTLVFEYLDKDLKQYLDDCGNIINMHNVKLFLFQLLRGLAYCHRQKVLHRDLKPQNLLINERGELKLADFGLARAKSIPTKTYSNEVVTLWYRPPDILLGSTDYSTQIDMWGVGCIFYEMATGRPLFPGSTVEEQLHFIFRILGTPTEETWPGILSNEEFKTYNYPKYRAEALLSHAPRLDSDGADLLTKLLQFEGRNRISAEDAMKHPFFLSLGERIHKLPDTTSIFALKEIQLQKEASLRSSSMPDSGRPAFRVVDTEF",
+ "mw_kda": 55.7,
+ "family": "CMGC kinase family",
+ "function": "Protein kinase that plays a role in vesicle-mediated transport processes and exocytosis. Regulates GH1 release by brain neurons. Phosphorylates NSF, and thereby regulates NSF oligomerization. Required for normal spermato",
+ "keywords": [
+  "3D-structure",
+  "Alternative splicing",
+  "ATP-binding",
+  "Cell membrane",
+  "Cytoplasm",
+  "Cytoplasmic vesicle",
+  "Differentiation",
+  "Kinase",
+  "Membrane",
+  "Nucleotide-binding",
+  "Phosphoprotein",
+  "Proteomics identification",
+  "Reference proteome",
+  "Serine/threonine-protein kinase"
+ ],
+ "features": [
+  {
+   "type": "Chain",
+   "start": 1,
+   "end": 496,
+   "description": "Cyclin-dependent kinase 16",
+   "evidences": 0
+  },
+  {
+   "type": "Domain",
+   "start": 165,
+   "end": 446,
+   "description": "Protein kinase",
+   "evidences": 1
+  },
+  {
+   "type": "Region",
+   "start": 1,
+   "end": 97,
+   "description": "Disordered",
+   "evidences": 1
+  },
+  {
+   "type": "Compositional bias",
+   "start": 69,
+   "end": 78,
+   "description": "Basic and acidic residues",
+   "evidences": 1
+  },
+  {
+   "type": "Compositional bias",
+   "start": 83,
+   "end": 93,
+   "description": "Polar residues",
+   "evidences": 1
+  },
+  {
+   "type": "Active site",
+   "start": 286,
+   "end": 286,
+   "description": "Proton acceptor",
+   "evidences": 2
+  },
+  {
+   "type": "Binding site",
+   "start": 171,
+   "end": 179,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Binding site",
+   "start": 194,
+   "end": 194,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Modified residue",
+   "start": 12,
+   "end": 12,
+   "description": "Phosphoserine; by BRSK2",
+   "evidences": 2
+  },
+  {
+   "type": "Modified residue",
+   "start": 36,
+   "end": 36,
+   "description": "Phosphoserine",
+   "evidences": 1
+  },
+  {
+   "type": "Modified residue",
+   "start": 42,
+   "end": 42,
+   "description": "Phosphoserine",
+   "evidences": 1
+  },
+  {
+   "type": "Modified residue",
+   "start": 64,
+   "end": 64,
+   "description": "Phosphoserine",
+   "evidences": 1
+  },
+  {
+   "type": "Modified residue",
+   "start": 65,
+   "end": 65,
+   "description": "Phosphoserine",
+   "evidences": 1
+  },
+  {
+   "type": "Modified residue",
+   "start": 78,
+   "end": 78,
+   "description": "Phosphoserine",
+   "evidences": 2
+  },
+  {
+   "type": "Modified residue",
+   "start": 82,
+   "end": 82,
+   "description": "Phosphoserine",
+   "evidences": 2
+  },
+  {
+   "type": "Modified residue",
+   "start": 89,
+   "end": 89,
+   "description": "Phosphoserine",
+   "evidences": 1
+  },
+  {
+   "type": "Modified residue",
+   "start": 95,
+   "end": 95,
+   "description": "Phosphoserine; by CDK5",
+   "evidences": 3
+  },
+  {
+   "type": "Modified residue",
+   "start": 110,
+   "end": 110,
+   "description": "Phosphoserine",
+   "evidences": 1
+  },
+  {
+   "type": "Modified residue",
+   "start": 119,
+   "end": 119,
+   "description": "Phosphoserine",
+   "evidences": 3
+  },
+  {
+   "type": "Modified residue",
+   "start": 138,
+   "end": 138,
+   "description": "Phosphoserine",
+   "evidences": 4
+  },
+  {
+   "type": "Modified residue",
+   "start": 146,
+   "end": 146,
+   "description": "Phosphoserine",
+   "evidences": 1
+  },
+  {
+   "type": "Modified residue",
+   "start": 153,
+   "end": 153,
+   "description": "Phosphoserine",
+   "evidences": 4
+  },
+  {
+   "type": "Modified residue",
+   "start": 155,
+   "end": 155,
+   "description": "Phosphoserine",
+   "evidences": 2
+  },
+  {
+   "type": "Modified residue",
+   "start": 175,
+   "end": 175,
+   "description": "Phosphothreonine",
+   "evidences": 1
+  },
+  {
+   "type": "Modified residue",
+   "start": 380,
+   "end": 380,
+   "description": "Phosphothreonine",
+   "evidences": 1
+  },
+  {
+   "type": "Modified residue",
+   "start": 391,
+   "end": 391,
+   "description": "Phosphoserine",
+   "evidences": 1
+  },
+  {
+   "type": "Modified residue",
+   "start": 478,
+   "end": 478,
+   "description": "Phosphoserine",
+   "evidences": 1
+  },
+  {
+   "type": "Modified residue",
+   "start": 480,
+   "end": 480,
+   "description": "Phosphoserine",
+   "evidences": 1
+  },
+  {
+   "type": "Alternative sequence",
+   "start": 1,
+   "end": 1,
+   "description": "in isoform 2",
+   "evidences": 1
+  },
+  {
+   "type": "Alternative sequence",
+   "start": 1,
+   "end": 1,
+   "description": "in isoform 3",
+   "evidences": 1
+  },
+  {
+   "type": "Mutagenesis",
+   "start": 12,
+   "end": 12,
+   "description": "Abolishes phosphorylation by BRSK2. Abolishes effect on insulin secretion.",
+   "evidences": 1
+  },
+  {
+   "type": "Mutagenesis",
+   "start": 119,
+   "end": 119,
+   "description": "Strongly reduces interaction with CCNY.",
+   "evidences": 1
+  },
+  {
+   "type": "Mutagenesis",
+   "start": 153,
+   "end": 153,
+   "description": "Constitutively activated, due to loss of an inhibitory phosphorylation site. Increases interaction with CCNY.",
+   "evidences": 2
+  },
+  {
+   "type": "Mutagenesis",
+   "start": 153,
+   "end": 153,
+   "description": "Abolishes interaction with CCNY.",
+   "evidences": 2
+  },
+  {
+   "type": "Mutagenesis",
+   "start": 194,
+   "end": 194,
+   "description": "Loss of kinase activity. Abolishes effect on insulin secretion.",
+   "evidences": 2
+  },
+  {
+   "type": "Mutagenesis",
+   "start": 194,
+   "end": 194,
+   "description": "Loss of kinase activity.",
+   "evidences": 2
+  },
+  {
+   "type": "Sequence conflict",
+   "start": 25,
+   "end": 25,
+   "description": "in Ref. 3; BAH13564",
+   "evidences": 1
+  },
+  {
+   "type": "Beta strand",
+   "start": 165,
+   "end": 173,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Beta strand",
+   "start": 175,
+   "end": 184,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Turn",
+   "start": 185,
+   "end": 187,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Beta strand",
+   "start": 190,
+   "end": 197,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Helix",
+   "start": 206,
+   "end": 217,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Beta strand",
+   "start": 226,
+   "end": 231,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Beta strand",
+   "start": 233,
+   "end": 241,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Beta strand",
+   "start": 244,
+   "end": 246,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Helix",
+   "start": 247,
+   "end": 253,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Turn",
+   "start": 254,
+   "end": 256,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Helix",
+   "start": 260,
+   "end": 279,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Beta strand",
+   "start": 282,
+   "end": 286,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Helix",
+   "start": 289,
+   "end": 291,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Beta strand",
+   "start": 292,
+   "end": 294,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Beta strand",
+   "start": 300,
+   "end": 302,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Beta strand",
+   "start": 304,
+   "end": 309,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Turn",
+   "start": 324,
+   "end": 327,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Turn",
+   "start": 330,
+   "end": 335,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Helix",
+   "start": 342,
+   "end": 357,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Helix",
+   "start": 367,
+   "end": 378,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Turn",
+   "start": 383,
+   "end": 385,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Helix",
+   "start": 389,
+   "end": 391,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Helix",
+   "start": 393,
+   "end": 397,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Helix",
+   "start": 403,
+   "end": 407,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Helix",
+   "start": 408,
+   "end": 411,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Helix",
+   "start": 417,
+   "end": 426,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Helix",
+   "start": 431,
+   "end": 433,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Helix",
+   "start": 437,
+   "end": 441,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Helix",
+   "start": 444,
+   "end": 449,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Helix",
+   "start": 452,
+   "end": 455,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Helix",
+   "start": 462,
+   "end": 465,
+   "description": "",
+   "evidences": 1
+  },
+  {
+   "type": "Helix",
+   "start": 470,
+   "end": 473,
+   "description": "",
+   "evidences": 1
+  }
+ ],
+ "domains": [
+  {
+   "type": "Domain",
+   "start": 165,
+   "end": 446,
+   "description": "Protein kinase",
+   "evidences": 1
+  },
+  {
+   "type": "Region",
+   "start": 1,
+   "end": 97,
+   "description": "Disordered",
+   "evidences": 1
+  }
+ ],
+ "landmarks": [
+  {
+   "type": "active_site",
+   "position": 33,
+   "residue": "L",
+   "description": "UniProt-annotated active site residue"
+  },
+  {
+   "type": "active_site",
+   "position": 145,
+   "residue": "L",
+   "description": "UniProt-annotated active site residue"
+  },
+  {
+   "type": "binding_site",
+   "position": 33,
+   "residue": "L",
+   "description": "UniProt-annotated binding site residue"
+  },
+  {
+   "type": "binding_site",
+   "position": 35,
+   "residue": "E",
+   "description": "UniProt-annotated binding site residue"
+  },
+  {
+   "type": "binding_site",
+   "position": 81,
+   "residue": "E",
+   "description": "UniProt-annotated binding site residue"
+  },
+  {
+   "type": "binding_site",
+   "position": 82,
+   "residue": "S",
+   "description": "UniProt-annotated binding site residue"
+  },
+  {
+   "type": "binding_site",
+   "position": 145,
+   "residue": "L",
+   "description": "UniProt-annotated binding site residue"
+  },
+  {
+   "type": "binding_site",
+   "position": 163,
+   "residue": "E",
+   "description": "UniProt-annotated binding site residue"
+  },
+  {
+   "type": "binding_site",
+   "position": 165,
+   "residue": "Y",
+   "description": "UniProt-annotated binding site residue"
+  },
+  {
+   "type": "modified_residue",
+   "position": 13,
+   "residue": "M",
+   "description": "UniProt-annotated modified residue residue"
+  },
+  {
+   "type": "modified_residue",
+   "position": 14,
+   "residue": "T",
+   "description": "UniProt-annotated modified residue residue"
+  },
+  {
+   "type": "modified_residue",
+   "position": 95,
+   "residue": "S",
+   "description": "UniProt-annotated modified residue residue"
+  },
+  {
+   "type": "modified_residue",
+   "position": 169,
+   "residue": "D",
+   "description": "UniProt-annotated modified residue residue"
+  },
+  {
+   "type": "modified_residue",
+   "position": 180,
+   "residue": "Y",
+   "description": "UniProt-annotated modified residue residue"
+  },
+  {
+   "type": "modified_residue",
+   "position": 329,
+   "residue": "P",
+   "description": "UniProt-annotated modified residue residue"
+  },
+  {
+   "type": "modified_residue",
+   "position": 341,
+   "residue": "T",
+   "description": "UniProt-annotated modified residue residue"
+  },
+  {
+   "type": "modified_residue",
+   "position": 343,
+   "residue": "I",
+   "description": "UniProt-annotated modified residue residue"
+  }
+ ],
+ "interactions": [
+  {
+   "partner": "",
+   "partner_accession": "",
+   "experiments": 0,
+   "evidence_type": "database_predicted"
+  },
+  {
+   "partner": "",
+   "partner_accession": "",
+   "experiments": 0,
+   "evidence_type": "database_predicted"
+  },
+  {
+   "partner": "",
+   "partner_accession": "",
+   "experiments": 0,
+   "evidence_type": "database_predicted"
+  },
+  {
+   "partner": "",
+   "partner_accession": "",
+   "experiments": 0,
+   "evidence_type": "database_predicted"
+  },
+  {
+   "partner": "",
+   "partner_accession": "",
+   "experiments": 0,
+   "evidence_type": "database_predicted"
+  },
+  {
+   "partner": "",
+   "partner_accession": "",
+   "experiments": 0,
+   "evidence_type": "database_predicted"
+  },
+  {
+   "partner": "",
+   "partner_accession": "",
+   "experiments": 0,
+   "evidence_type": "database_predicted"
+  },
+  {
+   "partner": "",
+   "partner_accession": "",
+   "experiments": 0,
+   "evidence_type": "database_predicted"
+  },
+  {
+   "partner": "",
+   "partner_accession": "",
+   "experiments": 0,
+   "evidence_type": "database_predicted"
+  },
+  {
+   "partner": "",
+   "partner_accession": "",
+   "experiments": 0,
+   "evidence_type": "database_predicted"
+  },
+  {
+   "partner": "",
+   "partner_accession": "",
+   "experiments": 0,
+   "evidence_type": "database_predicted"
+  }
+ ],
+ "uniprot_version": "227"
+}

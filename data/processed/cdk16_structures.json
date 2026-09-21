@@ -1,0 +1,50 @@
+{
+ "experimental": [
+  {
+   "pdb_id": "3MTL",
+   "method": "X-RAY DIFFRACTION",
+   "resolution_A": 2.4,
+   "chains": [
+    "A"
+   ],
+   "title": "Crystal structure of the PCTAIRE1 kinase in complex with Indirubin E804",
+   "deposit_date": "2010-04-30T00:00:00.000+00:00",
+   "uniprot_entity_chains": [
+    "A"
+   ]
+  },
+  {
+   "pdb_id": "5G6V",
+   "method": "X-RAY DIFFRACTION",
+   "resolution_A": 2.2,
+   "chains": [
+    "A",
+    "B"
+   ],
+   "title": "Crystal structure of the PCTAIRE1 kinase in complex with inhibitor",
+   "deposit_date": "2016-08-16T00:00:00.000+00:00",
+   "uniprot_entity_chains": [
+    "A",
+    "B"
+   ]
+  },
+  {
+   "pdb_id": "9R2I",
+   "method": "ELECTRON MICROSCOPY",
+   "resolution_A": 3.3,
+   "chains": [
+    "C"
+   ],
+   "title": "Cryo-EM structure of the complex CDK16:CCNY:14-3-3",
+   "deposit_date": "2025-04-30T00:00:00.000+00:00",
+   "uniprot_entity_chains": [
+    "C"
+   ]
+  }
+ ],
+ "predicted": {
+  "alphafold_id": "AF-Q00536-F1",
+  "file": "C:\\Users\\Laptop\\CDK16_Analysis\\data\\structures\\AF-Q00536-F1.cif",
+  "version": "model_v4"
+ }
+}

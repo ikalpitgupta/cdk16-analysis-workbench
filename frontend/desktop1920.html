@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>CDK16 stage</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<style>
+  html, body { margin: 0; background: #0b1220; }
+  #wrap { width: 1920px; height: 1080px; transform-origin: 0 0; }
+  #wrap iframe { width: 1920px; height: 1080px; border: 0; display: block; background: #fff; }
+</style>
+</head>
+<body>
+<div id="qa-badge" style="position:fixed;top:0;left:0;right:0;z-index:9999;background:#b91c1c;color:#fff;font:600 11px/1.4 system-ui;padding:3px 10px;text-align:center;pointer-events:none">QA TEST HARNESS — scaled preview of the app below. The real site is at <b>http://localhost:5173/</b></div>
+<div id="wrap" style="margin-top:20px"><iframe id="f" src="/" allow="fullscreen"></iframe></div>
+<script>
+  // Optional route passthrough: desktop1920.html?path=/variants loads that SPA route directly
+  (() => { const p = new URLSearchParams(location.search).get('path'); if (p) document.getElementById('f').src = p })()
+</script>
+<script>
+  // Stage size configurable: desktop1920.html?w=1275&h=660
+  const params = new URLSearchParams(location.search)
+  const W = parseInt(params.get('w') || '1920', 10)
+  const H = parseInt(params.get('h') || '1080', 10)
+  const wrap = document.getElementById('wrap')
+  const frame = document.getElementById('f')
+  wrap.style.width = W + 'px'
+  wrap.style.height = H + 'px'
+  frame.style.width = W + 'px'
+  frame.style.height = H + 'px'
+  function fit() {
+    const s = Math.min(window.innerWidth / W, window.innerHeight / H)
+    wrap.style.transform = 'scale(' + s + ')'
+    wrap.style.marginLeft = Math.max(0, (window.innerWidth - W * s) / 2) + 'px'
+  }
+  window.addEventListener('resize', fit)
+  fit()
+  frame.addEventListener('load', () => { document.title = 'READY' })
+</script>
+</body>
+</html>

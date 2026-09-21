@@ -1,0 +1,14 @@
+INFO:     Started server process [1896]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:53006 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53023 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53025 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53027 - "GET /api/structures/file/AF-Q00536-F1.cif HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63654 - "GET /api/variants?page=1&page_size=50&search=R285Q&variant_class=all&am_class=all&min_conservation=0&sort_by=priority_score&sort_desc=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64088 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64090 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64092 - "GET /api/structures/file/AF-Q00536-F1.cif HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50837 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50838 - "GET /api/analyses HTTP/1.1" 200 OK

@@ -1,0 +1,9 @@
+{
+ "generated_at": "2026-09-16T06:48:06+00:00",
+ "pipeline": "cdk16-integration v2.0",
+ "python": "3.13.1",
+ "pandas": "2.3.3",
+ "numpy": "2.2.6",
+ "elapsed_s": 2.1,
+ "provenance_file": "C:\\Users\\Laptop\\CDK16_Analysis\\data\\raw\\data_provenance.csv"
+}
