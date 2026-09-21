@@ -32,3 +32,6 @@ desktop.ini
 # --- Local tooling ---
 .freebuff/
 *.log
+
+.vercel
+.env*
