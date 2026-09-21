@@ -1,0 +1,11 @@
+# Render.com blueprint — free-tier web service.
+# Deploys the Dockerfile: builds the React frontend, serves it from FastAPI.
+services:
+  - type: web
+    name: cdk16-analysis-workbench
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/overview
+    envVars:
+      - key: PORT
+        value: 8000
