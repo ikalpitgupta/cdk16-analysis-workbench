@@ -547,6 +547,7 @@ table.tbl { width: 100%; min-width: 700px; border-collapse: collapse; font-size:
   white-space: nowrap; /* headers stay on one line — no two-line wrapping */
 }
 .tbl th .th-sort { color: var(--primary); margin-left: 2px; }
+.tbl th, .tbl td { vertical-align: middle; }
 .tbl td { white-space: nowrap; }
 /* long text columns may wrap (Domain, Function…) */
 .tbl td.wrap, .tbl th.wrap { white-space: normal; }
@@ -554,6 +555,19 @@ table.tbl { width: 100%; min-width: 700px; border-collapse: collapse; font-size:
 .tbl tbody tr:hover td { background: var(--surface); color: var(--text); }
 .tbl tbody tr.clickable { cursor: pointer; }
 .tbl td.mono, .tbl td .mono { font-family: var(--font-mono); font-size: 12.5px; color: var(--text); }
+.constraint-chip {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: var(--surface-2);
+  color: var(--text-2);
+  border: 1px solid var(--border);
+  white-space: nowrap;
+  line-height: 1.35;
+}
 
 /* ---------- badges ---------- */
 .badge {
@@ -970,7 +984,7 @@ label.lbl { display: block; font-size: 11.5px; color: var(--text-3); margin: 0 0
 .page-head .section-sub.mono { word-break: break-all; } /* long report IDs wrap at char level, not mid-glyph */
 
 /* tables living inside cards: the card is the border, the table floats inside */
-.table-card { padding: 10px 12px; }
+.table-card { padding: 10px 12px; overflow-x: auto; }
 .table-card .tbl-wrap { border: none; }
 .table-card .row-between { padding: 0 8px 6px; }
 /* dense cells so 10-column tables fit laptop widths without horizontal scroll */

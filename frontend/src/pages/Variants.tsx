@@ -101,32 +101,34 @@ export default function Variants() {
       {data && data.variants.length > 0 && (
         <>
           <div className="card table-card">
-            <table className="tbl">
-              <thead>
-                <tr>
-                  {th('Variant', 'variant_uid')}{th('AA change', 'aa_change')}{th('Pos.', 'protein_position')}
-                  {th('Class', 'variant_class')}{th('Domain', 'domain_name', true)}{th('Site', 'landmark_type')}
-                  {th('AM score', 'am_pathogenicity_score')}{th('AM class', 'am_pathogenicity_class')}
-                  {th('Conservation', 'conservation_score')}{th('Priority', 'priority_score')}
-                </tr>
-              </thead>
-              <tbody>
-                {data.variants.map(v => (
-                  <tr key={v.variant_uid} className="row-click" onClick={() => nav(`/variants/${v.variant_uid}`)} style={{ cursor: 'pointer' }}>
-                    <td className="mono">{v.variant_uid}</td>
-                    <td className="mono">{v.aa_change ?? '—'}</td>
-                    <td>{fmt(v.protein_position)}</td>
-                    <td><span className="badge badge-cyan">{v.variant_class}</span></td>
-                    <td className="muted wrap" style={{ minWidth: 88 }}>{v.domain_name ?? '—'}</td>
-                    <td className="muted">{v.landmark_type === 'none' ? '—' : v.landmark_type ?? '—'}</td>
-                    <td className="mono">{fmt(v.am_pathogenicity_score)}</td>
-                    <td className="muted">{v.am_pathogenicity_class ?? 'n/a'}</td>
-                    <td className="mono">{fmt(v.conservation_score, 2)}</td>
-                    <td className="mono">{fmt(v.priority_score, 1)}</td>
+            <div className="tbl-wrap">
+              <table className="tbl">
+                <thead>
+                  <tr>
+                    {th('Variant', 'variant_uid')}{th('AA change', 'aa_change')}{th('Pos.', 'protein_position')}
+                    {th('Class', 'variant_class')}{th('Domain', 'domain_name', true)}{th('Site', 'landmark_type')}
+                    {th('AM score', 'am_pathogenicity_score')}{th('AM class', 'am_pathogenicity_class')}
+                    {th('Conservation', 'conservation_score')}{th('Priority', 'priority_score')}
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {data.variants.map(v => (
+                    <tr key={v.variant_uid} className="row-click" onClick={() => nav(`/variants/${v.variant_uid}`)} style={{ cursor: 'pointer' }}>
+                      <td className="mono">{v.variant_uid}</td>
+                      <td className="mono">{v.aa_change ?? '—'}</td>
+                      <td>{fmt(v.protein_position)}</td>
+                      <td><span className="badge badge-cyan">{v.variant_class}</span></td>
+                      <td className="muted wrap" style={{ minWidth: 88 }}>{v.domain_name ?? '—'}</td>
+                      <td className="muted">{v.landmark_type === 'none' ? '—' : v.landmark_type ?? '—'}</td>
+                      <td className="mono">{fmt(v.am_pathogenicity_score)}</td>
+                      <td className="muted">{v.am_pathogenicity_class ?? 'n/a'}</td>
+                      <td className="mono">{fmt(v.conservation_score, 2)}</td>
+                      <td className="mono">{fmt(v.priority_score, 1)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
           <div className="row-between mt-2">
             <span className="muted">Page {data.page} of {data.pages}</span>

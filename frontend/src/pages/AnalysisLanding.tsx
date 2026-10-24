@@ -9,9 +9,8 @@ const STATUS_BADGE: Record<string, string> = {
   OUTDATED: 'badge-amber', CREATED: 'badge-gray',
 }
 
-/* Compact human-readable constraint summary, e.g. "missense · kinase · AM ≥ 0.9" */
-function constraintSummary(c: Record<string, unknown> | undefined): string {
-  if (!c || Object.keys(c).length === 0) return 'no filters'
+function getConstraintItems(c: Record<string, unknown> | undefined): string[] {
+  if (!c || Object.keys(c).length === 0) return []
   const parts: string[] = []
   const vt = c.variant_type as string[] | undefined
   if (vt?.length) parts.push(vt.join(', '))
@@ -24,6 +23,12 @@ function constraintSummary(c: Record<string, unknown> | undefined): string {
   const lm = c.landmark as string[] | undefined
   if (lm?.length) parts.push(`site: ${lm.join(', ')}`)
   if (typeof c.limit === 'number') parts.push(`cap ${c.limit.toLocaleString()}`)
+  return parts
+}
+
+/* Compact human-readable constraint summary, e.g. "missense · kinase · AM ≥ 0.9" */
+function constraintSummary(c: Record<string, unknown> | undefined): string {
+  const parts = getConstraintItems(c)
   return parts.length ? parts.join(' · ') : 'no filters'
 }
 
@@ -108,27 +113,46 @@ export default function AnalysisLanding() {
       )}
       {sessions && sessions.length > 0 && (
         <div className="card table-card">
-          <table className="tbl">
-            <thead>
-              <tr>
-                <th>Analysis</th><th>Status</th><th>Constraints</th><th>Created</th><th></th>
-              </tr>
-            </thead>
-            <tbody>
-              {sessions.map(s => (
-                <tr key={s.id} className="clickable" onClick={() => nav(s.has_results ? `/analysis/${s.id}/results` : `/analysis/${s.id}/run`)}>
-                  <td>
-                    <div style={{ color: 'var(--text)', fontWeight: 600 }}>{s.name}</div>
-                    <div className="mono muted">{s.id}</div>
-                  </td>
-                  <td><span className={`badge ${STATUS_BADGE[s.status] ?? 'badge-gray'}`}>{s.status}</span></td>
-                  <td className="muted" style={{ maxWidth: 260 }}>{constraintSummary(s.constraints)}</td>
-                  <td className="muted">{new Date(s.created_at).toLocaleString()}</td>
-                  <td><ChevronRight size={15} /></td>
+          <div className="tbl-wrap">
+            <table className="tbl">
+              <thead>
+                <tr>
+                  <th style={{ width: '26%', minWidth: 200 }}>Analysis</th>
+                  <th style={{ width: '12%', minWidth: 100 }}>Status</th>
+                  <th style={{ width: '40%', minWidth: 260 }}>Constraints</th>
+                  <th style={{ width: '18%', minWidth: 170, whiteSpace: 'nowrap' }}>Created</th>
+                  <th style={{ width: '4%', minWidth: 36, textAlign: 'right' }}></th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {sessions.map(s => {
+                  const items = getConstraintItems(s.constraints)
+                  return (
+                    <tr key={s.id} className="clickable" onClick={() => nav(s.has_results ? `/analysis/${s.id}/results` : `/analysis/${s.id}/run`)}>
+                      <td>
+                        <div style={{ color: 'var(--text)', fontWeight: 600 }}>{s.name}</div>
+                        <div className="mono muted">{s.id}</div>
+                      </td>
+                      <td><span className={`badge ${STATUS_BADGE[s.status] ?? 'badge-gray'}`}>{s.status}</span></td>
+                      <td className="wrap" style={{ minWidth: 240, maxWidth: 440 }} title={constraintSummary(s.constraints)}>
+                        {items.length === 0 ? (
+                          <span className="muted" style={{ fontStyle: 'italic', fontSize: 12 }}>no filters</span>
+                        ) : (
+                          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px 6px', alignItems: 'center' }}>
+                            {items.map((item, idx) => (
+                              <span key={idx} className="constraint-chip">{item}</span>
+                            ))}
+                          </div>
+                        )}
+                      </td>
+                      <td className="muted" style={{ whiteSpace: 'nowrap' }}>{new Date(s.created_at).toLocaleString()}</td>
+                      <td style={{ textAlign: 'right', color: 'var(--text-3)' }}><ChevronRight size={15} /></td>
+                    </tr>
+                  )
+                })}
+              </tbody>
+            </table>
+          </div>
         </div>
       )}
     </div>

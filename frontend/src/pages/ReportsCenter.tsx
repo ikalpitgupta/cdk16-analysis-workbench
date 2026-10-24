@@ -35,10 +35,19 @@ export default function ReportsCenter() {
       )}
       {reports && reports.length > 0 && (
         <div className="card table-card">
-          <table className="tbl">
-            <thead>
-              <tr><th>Report</th><th>Analysis</th><th>Section</th><th>Version</th><th>Status</th><th>Created</th><th>Actions</th></tr>
-            </thead>
+          <div className="tbl-wrap">
+            <table className="tbl">
+              <thead>
+                <tr>
+                  <th style={{ minWidth: 160 }}>Report</th>
+                  <th style={{ minWidth: 180 }}>Analysis</th>
+                  <th style={{ minWidth: 100 }}>Section</th>
+                  <th style={{ minWidth: 80 }}>Version</th>
+                  <th style={{ minWidth: 100 }}>Status</th>
+                  <th style={{ minWidth: 170, whiteSpace: 'nowrap' }}>Created</th>
+                  <th style={{ minWidth: 260, textAlign: 'right' }}>Actions</th>
+                </tr>
+              </thead>
             <tbody>
               {reports.map(r => (
                 <tr key={r.id}>
@@ -54,17 +63,18 @@ export default function ReportsCenter() {
                   <td className="muted">{new Date(r.created_at).toLocaleString()}</td>
                   <td style={{ whiteSpace: 'nowrap' }}>
                     <div className="row" style={{ gap: 6 }}>
-                      <Link className="btn" to={`/reports/${r.id}`} style={{ textDecoration: 'none', padding: '5px 10px' }} title="View report">
-                        <Eye size={14} />
+                      <Link className="btn btn-primary" to={`/reports/${r.id}`} style={{ textDecoration: 'none', padding: '5px 10px' }} title="View interactive report">
+                        <Eye size={14} /> View
                       </Link>
-                      <a className="btn" href={`/api/reports/${r.id}/download?format=html`} style={{ textDecoration: 'none', padding: '5px 10px' }} title="Download HTML">
-                        <Download size={14} />
+                      <a className="btn" href={`/api/reports/${r.id}/download?format=html`} download={`CDK16_report_${r.id}.html`} style={{ textDecoration: 'none', padding: '5px 10px' }} title="Download HTML report">
+                        <Download size={14} /> HTML
                       </a>
-                      {r.section === 'full' && (
-                        <a className="btn" href={`/api/reports/${r.id}/download?format=pdf`} style={{ textDecoration: 'none', padding: '5px 10px' }} title="Download PDF">
-                          PDF
-                        </a>
-                      )}
+                      <a className="btn" href={`/api/reports/${r.id}/download?format=pdf`} download={`CDK16_report_${r.id}.pdf`} style={{ textDecoration: 'none', padding: '5px 10px' }} title="Download PDF document">
+                        <Download size={14} /> PDF
+                      </a>
+                      <a className="btn" href={`/api/reports/${r.id}/download?format=json`} download={`CDK16_report_${r.id}.json`} style={{ textDecoration: 'none', padding: '5px 10px' }} title="Download JSON metadata">
+                        JSON
+                      </a>
                     </div>
                   </td>
                 </tr>
@@ -72,6 +82,7 @@ export default function ReportsCenter() {
             </tbody>
           </table>
         </div>
+      </div>
       )}
     </div>
   )

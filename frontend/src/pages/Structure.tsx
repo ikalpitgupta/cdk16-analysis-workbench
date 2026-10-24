@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { Box } from 'lucide-react'
 import { api } from '../api/client'
 import { useTheme } from '../theme'
@@ -60,10 +61,11 @@ function tierColor(v: VariantLite): string {
 }
 
 export default function Structure() {
+  const [searchParams] = useSearchParams()
   const { theme } = useTheme()
   const [meta, setMeta] = useState<StructMeta | null>(null)
   const [sel, setSel] = useState('AF-Q00536-F1')
-  const [highlight, setHighlight] = useState('286')
+  const [highlight, setHighlight] = useState(() => searchParams.get('pos') ?? searchParams.get('resi') ?? '286')
   const [showSurface, setShowSurface] = useState(false)
   const [showMarkers, setShowMarkers] = useState(true)
   const [tierFilter, setTierFilter] = useState<Set<TierId>>(new Set(AM_TIERS.map(t => t.id)))
@@ -73,6 +75,19 @@ export default function Structure() {
   const [modelLoaded, setModelLoaded] = useState(false)
   const viewer = useRef<any>(null)
   const box = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const vParam = searchParams.get('variant')
+    if (vParam) {
+      api.get<{ variant: { protein_position?: number | null } }>(`/variants/${encodeURIComponent(vParam)}`)
+        .then(d => {
+          if (d.variant?.protein_position) {
+            setHighlight(String(d.variant.protein_position))
+          }
+        })
+        .catch(() => {})
+    }
+  }, [searchParams])
 
   useEffect(() => {
     api.get<StructMeta>('/structures').then(setMeta).catch(e => setMolError(String(e)))
@@ -255,22 +270,24 @@ export default function Structure() {
 
       {meta && (
         <div className="card table-card mt-3">
-          <table className="tbl">
-            <thead><tr><th>Structure</th><th>Method</th><th>Resolution (Å)</th><th>Chains</th><th>Title</th></tr></thead>
-            <tbody>
-              <tr>
-                <td className="mono">AF-Q00536-F1</td><td>Predicted (AlphaFold)</td><td>—</td><td>A</td>
-                <td className="muted">AlphaFold DB monomer model for Q00536 (pLDDT per residue)</td>
-              </tr>
-              {meta.experimental.map(s => (
-                <tr key={s.pdb_id}>
-                  <td className="mono">{s.pdb_id}</td><td>{s.method}</td>
-                  <td>{s.resolution_A ?? '—'}</td><td>{s.chains?.join(', ') || '—'}</td>
-                  <td className="muted">{s.title}</td>
+          <div className="tbl-wrap">
+            <table className="tbl">
+              <thead><tr><th>Structure</th><th>Method</th><th>Resolution (Å)</th><th>Chains</th><th>Title</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td className="mono">AF-Q00536-F1</td><td>Predicted (AlphaFold)</td><td>—</td><td>A</td>
+                  <td className="muted wrap">AlphaFold DB monomer model for Q00536 (pLDDT per residue)</td>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+                {meta.experimental.map(s => (
+                  <tr key={s.pdb_id}>
+                    <td className="mono">{s.pdb_id}</td><td>{s.method}</td>
+                    <td>{s.resolution_A ?? '—'}</td><td>{s.chains?.join(', ') || '—'}</td>
+                    <td className="muted wrap">{s.title}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       )}
     </div>

@@ -238,7 +238,11 @@ def variants(page: int = 1, page_size: int = 50, search: str = "",
     if variant_class and variant_class != "all":
         df = df[df["variant_class"].astype(str).str.lower() == variant_class.lower()]
     if domain and domain != "all":
-        df = df[df["domain_name"].astype(str) == domain]
+        dl = domain.lower().strip()
+        if dl in ("none", "outside"):
+            df = df[df["domain_name"].isna() | df["domain_name"].astype(str).str.lower().isin(["none", "", "nan"])]
+        else:
+            df = df[df["domain_name"].astype(str).str.lower().str.contains(dl, regex=False, na=False)]
     if am_class and am_class != "all":
         df = df[df["am_pathogenicity_class"].astype(str).str.lower() == am_class.lower()]
     if min_conservation > 0 and "conservation_score" in df.columns:
@@ -263,6 +267,15 @@ def variant_detail(variant_uid: str) -> dict:
     lit = jload(PROCESSED / "cdk16_literature.json") or []
     pos = r.get("protein_position")
     landmarks = [l for l in protein.get("landmarks", []) if l.get("position") == pos]
+
+    v_lit_ids = set()
+    if r.get("literature_ids"):
+        v_lit_ids = {str(x).strip() for x in str(r["literature_ids"]).split(",") if str(x).strip()}
+    matched_lit = [a for a in lit if str(a.get("pmid")) in v_lit_ids]
+    if not matched_lit and r.get("rsid"):
+        rs = str(r["rsid"]).lower()
+        matched_lit = [a for a in lit if rs in str(a).lower()]
+
     return {
         "variant": r.to_dict(),
         "protein_context": {
@@ -288,7 +301,7 @@ def variant_detail(variant_uid: str) -> dict:
                          "source": "Ensembl VEP"},
         },
         "literature": [{"pmid": a.get("pmid"), "title": a.get("title")}
-                       for a in lit[:0]] or [],
+                       for a in matched_lit] or [],
     }
 
 
@@ -483,20 +496,30 @@ def report_download(report_id: str, format: str = "html") -> FileResponse:
     rid = dict(row)
     rdir = report_generator.REPORTS / rid["session_id"] / \
         f"{rid['section']}-v{rid['version']}"
-    if format == "pdf":
+    fmt_lower = (format or "html").lower()
+    if fmt_lower == "pdf":
         path = rdir / "report.pdf"
         if not path.exists():
             raise HTTPException(404, "PDF not generated for this report")
         media = "application/pdf"
-    elif format == "json":
+        ext = "pdf"
+    elif fmt_lower == "json":
         path = rdir / "report.json"
         media = "application/json"
+        ext = "json"
     else:
         path = rdir / "report.html"
         media = "text/html"
+        ext = "html"
     if not path.exists():
         raise HTTPException(410, "report file missing on disk")
-    return FileResponse(path, media_type=media, filename=path.name)
+    out_filename = f"CDK16_{rid['section']}_report_v{rid['version']}_{report_id}.{ext}"
+    return FileResponse(
+        path,
+        media_type=media,
+        filename=out_filename,
+        headers={"Content-Disposition": f'attachment; filename="{out_filename}"'}
+    )
 
 
 # --------------------------------------------------------------------------- #

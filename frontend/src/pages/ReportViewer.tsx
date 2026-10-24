@@ -25,16 +25,17 @@ export default function ReportViewer() {
           <h1 className="section-title">{meta.title}</h1>
           <p className="section-sub mono">{meta.id} · {meta.section} · v{meta.version}</p>
         </div>
-        <div className="row" style={{ marginLeft: 'auto' }}>
-          <a className="btn" href={`/api/reports/${rid}/download?format=html`}>
-            <Download size={14} /> HTML
+        <div className="row" style={{ marginLeft: 'auto', flexWrap: 'wrap', gap: 8 }}>
+          <a className="btn" href={`/api/reports/${rid}/download?format=html`} download={`CDK16_report_${rid}.html`} title="Download HTML report">
+            <Download size={14} /> Download HTML
           </a>
-          {meta.section === 'full' && (
-            <a className="btn" href={`/api/reports/${rid}/download?format=pdf`}>
-              <Download size={14} /> PDF
-            </a>
-          )}
-          <a className="btn btn-grad" href={`/api/reports/${rid}/html`} target="_blank" rel="noreferrer">
+          <a className="btn" href={`/api/reports/${rid}/download?format=pdf`} download={`CDK16_report_${rid}.pdf`} title="Download PDF document">
+            <Download size={14} /> Download PDF
+          </a>
+          <a className="btn" href={`/api/reports/${rid}/download?format=json`} download={`CDK16_report_${rid}.json`} title="Download JSON metadata">
+            <Download size={14} /> Download JSON
+          </a>
+          <a className="btn btn-grad" href={`/api/reports/${rid}/html`} target="_blank" rel="noreferrer" title="Open report in standalone browser tab">
             <ExternalLink size={14} /> Open standalone
           </a>
         </div>
@@ -56,6 +57,20 @@ export default function ReportViewer() {
             <div><span className="muted">Constraint hash:</span> <span className="mono">{meta.constraint_hash}</span></div>
             <div><span className="muted">Generated:</span> {new Date(meta.created_at).toLocaleString()}</div>
             <div><span className="muted">Status:</span> <span className={`badge ${meta.status === 'CURRENT' ? 'badge-emerald' : 'badge-amber'}`}>{meta.status}</span></div>
+          </div>
+          <div className="mt-3 pt-2" style={{ borderTop: '1px solid var(--border)' }}>
+            <div className="section-title" style={{ fontSize: 13, marginBottom: 8 }}>Download report</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+              <a className="btn" style={{ justifyContent: 'center' }} href={`/api/reports/${rid}/download?format=html`} download={`CDK16_report_${rid}.html`}>
+                <Download size={13} /> HTML Report
+              </a>
+              <a className="btn" style={{ justifyContent: 'center' }} href={`/api/reports/${rid}/download?format=pdf`} download={`CDK16_report_${rid}.pdf`}>
+                <Download size={13} /> PDF Document
+              </a>
+              <a className="btn" style={{ justifyContent: 'center' }} href={`/api/reports/${rid}/download?format=json`} download={`CDK16_report_${rid}.json`}>
+                <Download size={13} /> JSON Metadata
+              </a>
+            </div>
           </div>
         </div>
         <div className="card" style={{ flex: '1 1 320px', minWidth: 'min(100%, 320px)', padding: 0, overflow: 'hidden' }}>

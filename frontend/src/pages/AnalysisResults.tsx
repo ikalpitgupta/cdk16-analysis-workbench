@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { BarChart3, FileBarChart, FileText, Loader2 } from 'lucide-react'
+import { BarChart3, CheckCircle2, Download, Eye, FileBarChart, FileText, Loader2 } from 'lucide-react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend } from 'recharts'
 import { api } from '../api/client'
 import type { AnalysisResult, ReportMeta, Variant } from '../api/client'
@@ -29,6 +29,7 @@ export default function AnalysisResults() {
   const [tab, setTab] = useState<'overview' | 'variants' | 'ranking' | 'reports'>('overview')
   const [reports, setReports] = useState<ReportMeta[]>([])
   const [generating, setGenerating] = useState('')
+  const [justCreated, setJustCreated] = useState<ReportMeta | null>(null)
   const [error, setError] = useState('')
 
   const loadReports = () => api.get<ReportMeta[]>(`/analyses/${sid}/reports`).then(setReports).catch(() => {})
@@ -44,16 +45,23 @@ export default function AnalysisResults() {
     loadReports()
   }, [sid])
 
-  const genReport = async (section: string) => {
+  const genReport = async (section: string, openImmediately = false) => {
     setGenerating(section)
     setError('')
     try {
-      await api.post<ReportMeta>(`/analyses/${sid}/reports`, { section })
+      const rep = await api.post<ReportMeta>(`/analyses/${sid}/reports`, { section })
+      setJustCreated(rep)
       await loadReports()
+      if (openImmediately) {
+        nav(`/reports/${rep.id || rep.report_id}`)
+        return
+      }
+      setTab('reports')
     } catch (e) {
       setError(String(e))
+    } finally {
+      setGenerating('')
     }
-    setGenerating('')
   }
 
   if (error && !res) {
@@ -84,6 +92,8 @@ export default function AnalysisResults() {
     res.constraints.min_conservation ? `conservation ≥ ${res.constraints.min_conservation}` : 'no conservation filter',
   ]
 
+  const latestRep = reports.length > 0 ? reports[reports.length - 1] : null
+
   return (
     <div>
       <div className="results-header">
@@ -98,7 +108,12 @@ export default function AnalysisResults() {
         </div>
         <div className="rh-actions">
           <Link className="btn" to="/analysis/new">Edit Constraints (new run)</Link>
-          <button className="btn btn-grad" onClick={() => genReport('full')} disabled={generating !== ''}>
+          {latestRep && (
+            <Link className="btn" to={`/reports/${latestRep.id}`} title="View latest generated report">
+              <Eye size={15} /> View Report (v{latestRep.version})
+            </Link>
+          )}
+          <button className="btn btn-grad" onClick={() => genReport('full', true)} disabled={generating !== ''} title="Generate and view complete scientific report">
             {generating === 'full' ? <Loader2 size={15} className="spin" /> : <FileBarChart size={15} />}
             Generate Complete Report
           </button>
@@ -108,6 +123,37 @@ export default function AnalysisResults() {
       <div className="chip-row">
         {ctxChips.map(c => <span className="chip" key={c}>{c}</span>)}
       </div>
+
+      {justCreated && (() => {
+        const repId = justCreated.id || justCreated.report_id || ''
+        return (
+          <div className="card mb-2" style={{ background: 'var(--surface-2)', border: '1px solid var(--emerald)', padding: '14px 18px' }}>
+            <div className="row-between" style={{ flexWrap: 'wrap', gap: 10 }}>
+              <div className="row" style={{ gap: 8 }}>
+                <CheckCircle2 size={20} style={{ color: 'var(--emerald)', flexShrink: 0 }} />
+                <div>
+                  <div style={{ fontWeight: 600, fontSize: 14 }}>{justCreated.title || 'Report generated successfully!'}</div>
+                  <div className="muted" style={{ fontSize: 12 }}>Version {justCreated.version} · Ready to view or download</div>
+                </div>
+              </div>
+              <div className="row" style={{ flexWrap: 'wrap', gap: 8 }}>
+                <Link className="btn btn-grad" to={`/reports/${repId}`}>
+                  <Eye size={14} /> Open Report Viewer
+                </Link>
+                <a className="btn" href={`/api/reports/${repId}/download?format=html`} download={`CDK16_report_${repId}.html`}>
+                  <Download size={14} /> HTML
+                </a>
+                <a className="btn" href={`/api/reports/${repId}/download?format=pdf`} download={`CDK16_report_${repId}.pdf`}>
+                  <Download size={14} /> PDF
+                </a>
+                <a className="btn" href={`/api/reports/${repId}/download?format=json`} download={`CDK16_report_${repId}.json`}>
+                  <Download size={14} /> JSON
+                </a>
+              </div>
+            </div>
+          </div>
+        )
+      })()}
 
       {res.warnings?.length > 0 && (
         <div className="notice notice-amber mb-2">
@@ -232,25 +278,30 @@ export default function AnalysisResults() {
                 const existing = reports.filter(r => r.section === sec.key)
                 const latest = existing[existing.length - 1]
                 return (
-                  <div key={sec.key} className="row" style={{ gap: 6 }}>
+                  <div key={sec.key} className="row" style={{ gap: 6, alignItems: 'center' }}>
                     <button className="btn" onClick={() => genReport(sec.key)} disabled={generating !== ''}>
                       {generating === sec.key ? <Loader2 size={14} className="spin" /> : <FileText size={14} />}
                       {sec.label}
                     </button>
                     {latest && (
-                      <Link className="btn" to={`/reports/${latest.id}`} style={{ textDecoration: 'none' }}>
-                        v{latest.version} ↗
-                      </Link>
+                      <div className="row" style={{ gap: 4 }}>
+                        <Link className="btn btn-primary" to={`/reports/${latest.id}`} style={{ textDecoration: 'none', padding: '5px 8px', fontSize: 12 }} title="View report">
+                          <Eye size={13} /> v{latest.version}
+                        </Link>
+                        <a className="btn" href={`/api/reports/${latest.id}/download?format=pdf`} download={`CDK16_${latest.section}_report_${latest.id}.pdf`} style={{ padding: '5px 8px', fontSize: 12 }} title="Download PDF document">
+                          <Download size={13} /> PDF
+                        </a>
+                      </div>
                     )}
                   </div>
                 )
               })}
             </div>
           </div>
-          {reports.length > 0 && (
+          {reports.length > 0 ? (
             <div className="tbl-wrap wide">
               <table className="tbl">
-                <thead><tr><th>Report</th><th>Section</th><th>Version</th><th>Status</th><th>Created</th><th></th></tr></thead>
+                <thead><tr><th>Report</th><th>Section</th><th>Version</th><th>Status</th><th>Created</th><th>Actions & Downloads</th></tr></thead>
                 <tbody>
                   {reports.map(r => (
                     <tr key={r.id}>
@@ -259,11 +310,30 @@ export default function AnalysisResults() {
                       <td>v{r.version}</td>
                       <td><span className={`badge ${r.status === 'CURRENT' ? 'badge-emerald' : 'badge-amber'}`}>{r.status}</span></td>
                       <td className="muted">{new Date(r.created_at).toLocaleString()}</td>
-                      <td><Link to={`/reports/${r.id}`}>View</Link></td>
+                      <td style={{ whiteSpace: 'nowrap' }}>
+                        <div className="row" style={{ gap: 6 }}>
+                          <Link className="btn btn-primary" to={`/reports/${r.id}`} style={{ padding: '4px 8px', fontSize: 12 }} title="Open report viewer">
+                            <Eye size={13} /> View
+                          </Link>
+                          <a className="btn" href={`/api/reports/${r.id}/download?format=html`} download={`CDK16_${r.section}_report_${r.id}.html`} style={{ padding: '4px 8px', fontSize: 12 }} title="Download HTML report">
+                            <Download size={13} /> HTML
+                          </a>
+                          <a className="btn" href={`/api/reports/${r.id}/download?format=pdf`} download={`CDK16_${r.section}_report_${r.id}.pdf`} style={{ padding: '4px 8px', fontSize: 12 }} title="Download PDF document">
+                            <Download size={13} /> PDF
+                          </a>
+                          <a className="btn" href={`/api/reports/${r.id}/download?format=json`} download={`CDK16_${r.section}_report_${r.id}.json`} style={{ padding: '4px 8px', fontSize: 12 }} title="Download JSON metadata">
+                            JSON
+                          </a>
+                        </div>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
+            </div>
+          ) : (
+            <div className="card mt-2">
+              <p className="muted" style={{ margin: 0 }}>No reports generated yet for this analysis run. Click "Generate Complete Report" or any section button above.</p>
             </div>
           )}
         </div>

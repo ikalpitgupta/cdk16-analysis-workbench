@@ -80,6 +80,7 @@ export interface AnalysisResult {
 
 export interface ReportMeta {
   id: string
+  report_id?: string
   session_id: string
   run_number: number
   section: string

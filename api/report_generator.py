@@ -6,6 +6,7 @@ from computed data — nothing is fabricated.
 """
 from __future__ import annotations
 
+import html
 import json
 import logging
 import os
@@ -84,7 +85,7 @@ def _fmt(v) -> str:
 
 
 def _esc(s) -> str:
-    return re.sub(r"&", "&amp;", re.sub(r"<", "&lt;", str(s)))
+    return html.escape(str(s))
 
 
 def _fig_src(path: Path) -> str:
@@ -567,10 +568,8 @@ def create_report(result: dict, section: str = "full",
     html_path.write_text(generate_html(result, protein, title, section),
                          encoding="utf-8")
 
-    pdf_ok = False
-    if section == "full":
-        pdf_path = rdir / "report.pdf"
-        pdf_ok = generate_pdf(result, protein, title, html_path, pdf_path)
+    pdf_path = rdir / "report.pdf"
+    pdf_ok = generate_pdf(result, protein, title, html_path, pdf_path)
 
     # copy figures used by html next to the report
     figsrc = REPORTS / "figures"
@@ -578,6 +577,7 @@ def create_report(result: dict, section: str = "full",
         (rdir / "figures" / f.name).write_bytes(f.read_bytes())
 
     meta = {
+        "id": rid,
         "report_id": rid,
         "analysis_id": analysis_id,
         "analysis_name": result.get("analysis_name", analysis_id),
